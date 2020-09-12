@@ -5,4 +5,20 @@ def single_actor_action
   render "single_actor.json.jb"
 end
 
+def query_show
+  @single_actor = Actor.find(params[:id])
+  render "single_actor.json.jb"
+end
+
+
+def show
+  @single_actor = Actor.find(params[:id])
+  render "single_actor.json.jb"
+end
+
+def body_show
+@single_actor =Actor.find(params[:id])
+render "single_actor.json.jb"
+end
+
 end

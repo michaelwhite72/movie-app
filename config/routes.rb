@@ -9,5 +9,14 @@ Rails.application.routes.draw do
     get "/movies" => "movies#index"
 
     get "/movies/:id" => "movies#show"
+
+    get "/query_actor_params" => "actors#query_show"
+    
+    get "/actors/:id" => "actors#show"
+
+    post "body_actors_query" => "actors#body_show"
+
+
+
   end
 end
