@@ -1,8 +1,0 @@
-@single_actor
-
-# {
-# first_name: @single_actor.first_name,
-# last_name: @single_actor.last_name,
-# known_for: @single_actor.known_for
-# }
-
