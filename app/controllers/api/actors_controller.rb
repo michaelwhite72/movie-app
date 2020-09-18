@@ -18,8 +18,11 @@ def create
     age: params[:age],
     known_for: params[:known_for]
   )
-  @actor.save
+  if @actor.save
   render "show.json.jb"
+  else
+    render json: {message: @actor.errors.full_messages},status: 422  
+  end
 end
 
 def update
