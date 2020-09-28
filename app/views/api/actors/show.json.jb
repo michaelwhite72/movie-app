@@ -1,4 +1,6 @@
 
+render partial: "actor.json.jb", locals: { actor: @actor }
+
 {
 id: @actor.id,
 first_name: @actor.first_name,
