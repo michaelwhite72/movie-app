@@ -1,4 +1,5 @@
 class Api::MoviesController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
 
   def index
     @movies = Movie.where(english: true)
@@ -16,13 +17,13 @@ class Api::MoviesController < ApplicationController
       year: params[:year],
       plot: params[:plot],
       director: params[:director],
-      english: params[:english]
+      english: params[:english],
 
     )
     if @movie.save
       render "show.json.jb"
     else
-      render json: {message: @movie.errors.full_messages}, status: 422
+      render json: { message: @movie.errors.full_messages }, status: 422
     end
   end
 
@@ -41,7 +42,6 @@ class Api::MoviesController < ApplicationController
   def destroy
     movie = Movie.find(params[:id])
     movie.destroy
-    render json: {message: "The movie has been successfully deleted."}
+    render json: { message: "The movie has been successfully deleted." }
   end
-
 end
