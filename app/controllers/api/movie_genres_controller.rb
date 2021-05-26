@@ -1,6 +1,6 @@
 class Api::MovieGenresController < ApplicationController
   def create
-    @moviegenre = MovieGenre.new(
+    @moviegenre = MovierailGenre.new(
       movie_id: params[:movie_id],
       genre_id: params[:genre_id],
     )
